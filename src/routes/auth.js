@@ -42,8 +42,4 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/hello', (req, res) => {
-  res.send({hello: 'World!'});
-})
-
 module.exports = router;
