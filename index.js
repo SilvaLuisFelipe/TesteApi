@@ -16,7 +16,7 @@ const AppDataSource = new DataSource({
   entities: [User],
 });
 
-// Conectar ao banco de dados e iniciar o servidor
+// iniciar o banco de dados e iniciar o servidor
 AppDataSource.initialize()
   .then(() => {
     console.log('Conectado ao banco de dados!');
