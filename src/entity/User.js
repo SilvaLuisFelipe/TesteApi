@@ -1,35 +1,38 @@
 const { EntitySchema } = require('typeorm');
-const Task = require('./Task'); // Importar a entidade relacionada (caso precise para o lado inverso)
 
 const User = new EntitySchema({
-  name: 'User', // Nome da entidade
-  tableName: 'users', // Nome da tabela no banco de dados
+  name: 'User',
+  tableName: 'users',
   columns: {
     id: {
       type: Number,
       primary: true,
-      generated: true, // Chave primária auto-gerada
+      generated: true,
     },
     name: {
       type: String,
+      nullable: false, // Adicione conforme necessário
     },
     email: {
       type: String,
-      unique: true, // Garante que o email seja único
+      unique: true,
+      nullable: false, // Adicione conforme necessário
     },
     password: {
       type: String,
+      nullable: false, // Adicione conforme necessário
     },
   },
   relations: {
     tasks: {
-      type: 'one-to-many', // Relacionamento um-para-muitos
-      target: 'Task', // Nome da entidade relacionada
-      inverseSide: 'user', // Referência ao lado inverso
-      cascade: true, // Habilitar cascata se necessário
+      type: 'one-to-many',
+      target: 'Task',
+      inverseSide: 'user',
+      cascade: true,
     },
   },
 });
 
 module.exports = User;
+
 

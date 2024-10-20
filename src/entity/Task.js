@@ -1,33 +1,37 @@
-const { EntitySchema } = require("typeorm");
-const User = require("./User");
+const { EntitySchema } = require('typeorm');
 
 const Task = new EntitySchema({
-  name: "Task", // Nome da entidade
-  tableName: "tasks", // Nome da tabela no banco de dados
+  name: 'Task',
+  tableName: 'tasks',
   columns: {
     id: {
       type: Number,
       primary: true,
-      generated: true, // Chave primária auto gerada
+      generated: true,
     },
     title: {
       type: String,
+      nullable: false, // Adicione conforme necessário
     },
     description: {
       type: String,
-      nullable: true, // Campo pode ser nulo
+      nullable: true,
     },
     completed: {
       type: Boolean,
-      default: false, // Valor padrão
+      default: false,
+    },
+    userId: {
+      type: Number,
+      nullable: false, // Ou true, dependendo da lógica do seu aplicativo
     },
   },
   relations: {
     user: {
-      type: "many-to-one", // Relacionamento muitos-para-um
-      target: () => User,
-      inverseSide: "tasks", // Referência ao lado inverso da relação
-      cascade: true, // Habilitar o cascade se necessário
+      type: 'many-to-one',
+      target: 'User',
+      inverseSide: 'tasks',
+      joinColumn: { name: 'userId', referencedColumnName: 'id' },
     },
   },
 });

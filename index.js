@@ -13,7 +13,7 @@ const AppDataSource = new DataSource({
   password: '201233',
   database: 'todo_list',
   synchronize: true,
-  entities: [User],
+  entities: [User, Task],
 });
 
 // iniciar o banco de dados e iniciar o servidor
