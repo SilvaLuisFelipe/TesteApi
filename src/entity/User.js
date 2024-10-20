@@ -1,4 +1,5 @@
 const { EntitySchema } = require('typeorm');
+const Task = require('./Task');
 
 const User = new EntitySchema({
   name: 'User',
