@@ -14,29 +14,23 @@
 
 8. Use uma ferramenta como **Postman** ou **Insomnia** para testar a API. Aqui estão alguns exemplos de requisições:
 
-1. **Criar Usuário** (POST `http://localhost:3000/api/auth/register`):
-   ```json
-   {
-     "name": "Nome do Usuário",
-     "email": "usuario@example.com",
-     "password": "senha"
-   }
-   ```
+**Base: http://localhost:3000/users**
 
-2. **Login** (POST `http://localhost:3000/api/auth/login`):
-   ```json
-   {
-     "email": "usuario@example.com",
-     "password": "senha"
-   }
-   ```
+Método HTTP	Rota	Descrição
+POST	/users	Cria um novo usuário
+GET	/users	Lista todos os usuários
+GET	/users/:id	Obtém um usuário específico
+PUT	/users/:id	Atualiza dados de um usuário
+DELETE	/users/:id	Deleta um usuário específico
+---------------------------------------------------------
+**Base: http://localhost:3000/tasks**
 
-3. **Criar Tarefa** (POST `http://localhost:3000/api/auth/tasks`):
-   ```json
-   {
-     "title": "Título da Tarefa",
-     "description": "Descrição da Tarefa"
-   }
-   ```
+Método HTTP	Rota	Descrição
+POST	/tasks	Cria uma nova tarefa
+GET	/tasks	Lista todas as tarefas
+GET	/tasks/:id	Obtém uma tarefa específica
+PUT	/tasks/:id	Atualiza uma tarefa
+DELETE	/tasks/:id	Deleta uma tarefa específica
+----------------------------------------------------------
 
 
