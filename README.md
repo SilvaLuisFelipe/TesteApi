@@ -14,7 +14,7 @@
 
 8. Use uma ferramenta como **Postman** ou **Insomnia** para testar a API. Aqui estão alguns exemplos de requisições:
 
-1. **Criar Usuário** (POST `http://localhost:3000/api/auth/users`):
+1. **Criar Usuário** (POST `http://localhost:3000/api/auth/register`):
    ```json
    {
      "name": "Nome do Usuário",
