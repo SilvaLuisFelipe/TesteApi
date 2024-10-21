@@ -22,7 +22,7 @@ GET	/users	Lista todos os usuários
 GET	/users/:id	Obtém um usuário específico
 PUT	/users/:id	Atualiza dados de um usuário
 DELETE	/users/:id	Deleta um usuário específico
----------------------------------------------------------
+
 **Base: http://localhost:3000/tasks**
 
 Método HTTP	Rota	Descrição
@@ -31,6 +31,6 @@ GET	/tasks	Lista todas as tarefas
 GET	/tasks/:id	Obtém uma tarefa específica
 PUT	/tasks/:id	Atualiza uma tarefa
 DELETE	/tasks/:id	Deleta uma tarefa específica
-----------------------------------------------------------
+
 
 
